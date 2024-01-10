@@ -12,7 +12,7 @@ while ((samplePtr = next_arrow(iterator)) != IntPtr.Zero) {
 // free the rust iterator
 free_arrow_iterator(iterator);
 
-
+// External calls defined here -> these are the methods in our rust lib. The .dylib needs to be in the working directory where this project is ran from.
 [DllImport("rust_test.dylib")]
 static extern IntPtr create_arrow_iterator();
 
@@ -22,15 +22,9 @@ static extern IntPtr next_arrow(IntPtr iterator);
 [DllImport("rust_test.dylib")]
 static extern void free_arrow_iterator(IntPtr iterator);
 
+// The ArrowSample struct (returned by rust) is defined here. We unmarshal the pointer to this struct.
 [StructLayout(LayoutKind.Sequential)]
-public struct ArrowSample {
+struct ArrowSample {
     [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
     public int[] data;
 }
-
-
-
-
-
-
-
