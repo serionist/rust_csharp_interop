@@ -1,4 +1,4 @@
 /rust_app/target
 dotnet/bin
 dotnet/obj
-dotnet/run_test.dylib
+dotnet/rust_test.dylib
