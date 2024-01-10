@@ -21,7 +21,6 @@ class Program {
         IntPtr iterator = create_arrow_iterator();
         IntPtr samplePtr;
         while ((samplePtr = next_arrow(iterator)) != IntPtr.Zero) {
-            Console.WriteLine("Iterator next called");
             ArrowSample sample = Marshal.PtrToStructure<ArrowSample>(samplePtr);
             Console.WriteLine($"ArrowSample: [[{sample.data[0]}, {sample.data[1]}], [{sample.data[2]}, {sample.data[3]}]]");
         }
