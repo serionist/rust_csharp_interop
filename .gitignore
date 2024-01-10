@@ -1,0 +1,4 @@
+/rust_app/target
+dotnet/bin
+dotnet/obj
+dotnet/run_test.dylib
