@@ -7,4 +7,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Using Include="System"/>
+     <Using Include="System.Runtime.InteropServices"/>
+</ItemGroup>
+
 </Project>
